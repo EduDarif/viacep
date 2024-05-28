@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>CEP</title>
+</head>
+
+<body class="container">
+    <section class="row mt-5 align-items-center">
+        <div class="col">
+            <img src="imagens/imagem_cep.svg" alt="imgcep" width="100%">
+        </div>
+        <div class="col" id="dfendereco">
+            <article class="card card-body">
+                <h3>Preencha o seu Endereço</h3>
+                <hr class="border border-primary border-3 opacity-75">
+                <form name="edbrasil" id="cad-endereco-form">
+
+                    <label for="cep">CEP</label>
+                    <input type="text" name="txtcep" id="cep" class="form-control mb-2" placeholder="Ex: 01001-000"
+                        required>
+
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" name="txtlogradouro" id="logradouro" class="form-control mb-2" required>
+
+                    <label for="numero">Número</label>
+                    <input type="text" name="txtnumero" id="numero" class="form-control mb-2" placeholder="Ex: 123"
+                        required>
+
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="txtbairro" id="bairro" class="form-control mb-2" required>
+
+                    <label for="localidade">Cidade</label>
+                    <input type="text" name="txtcidade" id="localidade" class="form-control mb-2" required>
+
+                    <label for="uf">UF</label>
+                    <input type="text" name="txtuf" id="uf" class="form-control mb-2" required>
+
+                    <label for="ddd">DDD</label>
+                    <input type="text" name="txtddd" id="ddd" class="form-control mb-2" maxlength="2" pattern="\d*" required>
+
+                    <label for="ibge">IBGE</label>
+                    <input type="text" name="txtibge" id="ibge" class="form-control mb-2" required>
+
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <input type="button" id="addButton" value="Adicionar Endereço" class="btn btn-primary" readonly
+                            onclick="cadEndereco(cep.value, logradouro.value, numero.value, bairro.value, localidade.value, uf.value, ddd.value, ibge.value)">
+                        <input type="button" id="salvarEndereco" value="Salvar Endereço" class="btn btn-secondary" readonly
+                        onclick="salvar()">
+                    </div>
+                </form>
+            </article>
+    </section>
+    <hr class="border border-primary border-3 opacity-75">
+    <h4 class="text-center">Informações do Endereço</h4>
+    <div class="tabela" id="dtinformacoes">
+        <table id="tbendereco" class="table table-hover table-striped table-bordered">
+            <thead class="table-ligth">
+                <tr>
+                    <th>ID</th>
+                    <th class="table-active">CEP</th>
+                    <th>Logradouro</th>
+                    <th>Número</th>
+                    <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>UF</th>
+                    <th>DDD</th>
+                    <th>IBGE</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/consulta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
